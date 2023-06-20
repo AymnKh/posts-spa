@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <span>
+    <a href="">My Posts</a>
+  </span>
+  <span class="spacer"></span>
+  <ul>
+    <li *ngIf="userAuthnticated">
+      <a mat-button routerLink="/create" routerLinkActive="mat-mdc-raised-button"
+        >Create</a
+      >
+      
+    </li>
+    <li *ngIf="!userAuthnticated">
+     <a mat-button routerLink="/login" routerLinkActive="mat-mdc-raised-button"
+        >Login</a
+      >
+    </li>
+    <li *ngIf="!userAuthnticated">
+     <a mat-button routerLink="/signup" routerLinkActive="mat-mdc-raised-button"
+        >Signup</a
+      >
+    </li>
+    <li *ngIf="userAuthnticated">
+     <button mat-button  routerLinkActive="mat-mdc-raised-button" (click)="logout()"
+        >Log Out</button
+      >
+    </li>
+  </ul>
+</mat-toolbar>
