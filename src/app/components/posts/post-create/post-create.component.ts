@@ -74,13 +74,16 @@ export class PostCreateComponent {
       // add post
       this.postsService.addPost(post).subscribe({
         next: (data) => {
-          this.isLoading = false;
+          
         },
-        error: (error) => { console.log(error) }, // handle error
+        error: (error) => {
+          this.isLoading = false;
+        }, // handle error
         complete: () => {
           // reset form
           this.postForm.reset();
           this.router.navigate(['/']); // navigate to home page
+          this.isLoading = false;
         }
       })
 
